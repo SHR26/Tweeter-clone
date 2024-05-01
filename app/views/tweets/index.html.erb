@@ -1,0 +1,14 @@
+<h1>All Tweets</h1>
+<ul>
+  <% @tweets.each do |tweet| %>
+    <div class="tweet">
+      <p><%= tweet.content %></p>
+      <%= link_to 'Edit', edit_tweet_path(tweet), class: "btn btn-primary" %>
+      <%= link_to 'Delete', tweet_path(tweet), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    </div>
+  <% end %>
+</ul>
+
+<%= stylesheet_link_tag 'style', media: 'all' %>
+
+<%= link_to 'New Tweet', new_tweet_path, class: 'btn btn-success' %>

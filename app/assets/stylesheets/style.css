@@ -1,0 +1,32 @@
+.tweet {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    margin-right: 10px;
+  }
+  
+  .btn-primary {
+    background-color: blue;
+    color: white;
+  }
+  
+  .btn-secondary {
+    background-color: gray;
+    color: white;
+  }
+  
+  .btn-success {
+    background-color: green;
+    color: white;
+  }
+  
+  .btn-danger {
+    background-color: red;
+    color: white;
+  }
+  

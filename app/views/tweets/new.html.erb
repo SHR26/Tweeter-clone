@@ -1,0 +1,11 @@
+<h1 style="color: blue;">New Tweet</h1>
+
+<%= form_for @tweet do |f| %>
+  <div class="form-group">
+    <%= f.label :content, "Tweet Content" %>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+  <%= f.submit 'Create Tweet', class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to 'Back to Tweets', tweets_path, class: "btn btn-secondary" %>
