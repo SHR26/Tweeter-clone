@@ -1,6 +1,17 @@
 class TweetsController < ApplicationController
+  before_action :authenticate_user!
+
+
+
   def index
     @tweets = Tweet.all
+  end
+
+  def show
+    
+    @tweet = Tweet.find(params[:id])
+    @tweet.destroy 
+    redirect_to tweets_path, notice: 'Tweet was successfully deleted.'
   end
 
   def new
@@ -11,9 +22,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
   end
   
-  # def delete
-  #   @tweet = Tweet.find(params[:id])
-  # end
+
 
   def create
     @tweet = Tweet.new(tweet_params)
@@ -36,6 +45,7 @@ class TweetsController < ApplicationController
   end
 
   def destroy
+    
     @tweet = Tweet.find(params[:id])
     @tweet.destroy
     redirect_to tweets_path, notice: 'Tweet was successfully destroyed.'

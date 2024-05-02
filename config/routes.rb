@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
   # get 'tweets/index'
   # get 'tweets/create'
   # get 'tweets/update'
   # get 'tweets/destroy'
-resources :tweets, only: [:index, :create, :update, :destroy, :new, :edit]
+resources :tweets, only: [:index, :create, :update, :destroy, :new, :edit, :show]
 root 'tweets#index'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
